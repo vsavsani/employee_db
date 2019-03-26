@@ -16,7 +16,8 @@ def main():
         emp_id = input('Enter Employee ID: ')
         modify_employee.modify_employee(employee_data_file, emp_id)
     elif choice == 3:
-        delete_employee.delete_employee(employee_data_file)
+        emp_id = input('Enter Employee ID: ')
+        delete_employee.delete_employee(employee_data_file, emp_id)
     elif choice ==4:
         display_employee.display_employee(employee_data_file)
     elif choice <= 0 or  choice > 5:

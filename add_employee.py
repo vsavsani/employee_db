@@ -23,17 +23,37 @@ def add_employee(emp_data_file):
 def add_menu():
 	e_data = [None]*6
 	e_data[0] = input("employee id:")
-	if not(re.search(r"\d+",e_data[0])):
-		print('Employee ID should be integer.')
-		menu()
-		#return
+	if not(re.search(r"^\d{6}$",e_data[0])):
+		print('Employee ID should be integer and of length 6.')
+		emp_dict = add_menu()
+		return emp_dict
 	e_data[1] = input("employee name:")
+	if not(re.search(r"[a-zA-Z]+",e_data[1])):
+		print('Employee name should be alphabetic.')
+		emp_dict = add_menu()
+		return emp_dict
 	#print(e_data[0] + '-' + e_data[1])
 	e_data[2] = input("employee mobile1:")
+	if not(re.search(r"^\d{10}$|-",e_data[2])):
+		print('Employee mobile no. 1 should be integer of length 10 or -')
+		emp_dict = add_menu()
+		return emp_dict
 	e_data[3] = input("employee mobile2:")
+	if not(re.search(r"^\d{10}$",e_data[3])):
+		print('Employee mobile no. 2 should be integer of length 10 or '-'')
+		emp_dict = add_menu()
+		return emp_dict
 	e_data[4] = input("employee landline1:")
+	if not(re.search(r"^\d{10}$",e_data[4])):
+		print('Employee landline no. 1 should be integer of length 10 or '-'')
+		emp_dict = add_menu()
+		return emp_dict
 	e_data[5] = input("employee landline2:")
-	
+	if not(re.search(r"^\d{10}$",e_data[5])):
+		print('Employee landline no. 2 should be integer of length 10 or '-'')
+		emp_dict = add_menu()
+		return emp_dict
+
 	emp_dict = {}
 	emp_dict[e_data[0]] = {'name':e_data[1], 'contacts': { 'mobile':[e_data[2],e_data[3]], 'landline':[e_data[4],e_data[5]]}}
 	print(emp_dict)
