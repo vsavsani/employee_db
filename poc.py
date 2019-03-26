@@ -1,6 +1,6 @@
-import os
-from os import path
+def check_for_entry(file_h, str):
+	if str in file_h.read():
+		return True;
+	return False;
 
-print("Item exists:" + str(path.exists("mods.py")))
-if not(path.exists("meth.py")):
-	print("no")
+print(check_for_entry(open('employee.csv','r'), "aaa"))

@@ -8,12 +8,13 @@ employee_data_file = "D:\\source\\vibha\\employee_db\\employee.csv"
 
 def main():
   menu()
-  choice = int(input('Enter your choice'))
+  choice = int(input('Enter your choice: '))
   while choice!=5:
     if choice == 1:
         add_employee.add_employee(employee_data_file)
     elif choice == 2:
-        modify_employee.modify_employee(employee_data_file)
+        emp_id = input('Enter Employee ID: ')
+        modify_employee.modify_employee(employee_data_file, emp_id)
     elif choice == 3:
         delete_employee.delete_employee(employee_data_file)
     elif choice ==4:
@@ -27,10 +28,10 @@ def main():
 
 def menu():
   print('Choose your Option below')
-  print('Add new Employee Details = 1')
-  print('Change an existing Employee Details = 2')
-  print('Delete an Employee Details = 3')
-  print("Look-up Employee Details = 4")
+  print('1. Add new Employee Details')
+  print('2. Change an existing Employee Details')
+  print('3. Delete an Employee Details')
+  print("4. Look-up Employee Details")
   print('Quit the program = 5')
 
 
