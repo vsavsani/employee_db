@@ -4,7 +4,7 @@ import delete_employee
 import display_employee
 
 
-employee_data_file = "D:\\source\\vibha\\employee_db\\employee.csv"
+employee_data_file = "employee.csv"
 
 def main():
   menu()
@@ -27,12 +27,15 @@ def main():
     choice = int(input('Enter your choice'))
 
 def menu():
+  print('***************************************************')
+  print('*                   Menu                          *')
+  print('***************************************************')
   print('Choose your Option below')
   print('1. Add new Employee Details')
   print('2. Change an existing Employee Details')
   print('3. Delete an Employee Details')
-  print("4. Look-up Employee Details")
-  print('Quit the program = 5')
+  print('4. Look-up Employee Details')
+  print('5. Quit the program')
 
 
 #################################################

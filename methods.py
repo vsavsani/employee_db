@@ -3,7 +3,7 @@ from os import path
 
 def load_emp_data(file_h, emp_id):
 	line = file_h.readline()
-	print(line)
+	#print(line)
 	entry = line.split(',')
 	emp_dict = {}
 	while line:			
@@ -14,10 +14,11 @@ def load_emp_data(file_h, emp_id):
 									'landline':[entry[4],entry[5].strip()]
 								}
 							};
-		print(emp_dict)
+		#print(emp_dict)
 		line = file_h.readline()
 		entry = line.split(',')
 	file_h.close()
+	print(emp_dict)
 	return emp_dict
 
 def open_for_read(file_n):
