@@ -25,9 +25,10 @@ def main():
     elif choice == 5:
         print("The program would quit now...")
     menu()
-    choice = int(input('Enter your choice'))
+    choice = int(input('Enter your choice: '))
 
 def menu():
+  print('\n')
   print('***************************************************')
   print('*                   Menu                          *')
   print('***************************************************')
@@ -37,7 +38,7 @@ def menu():
   print('3. Delete an Employee Details')
   print('4. Look-up Employee Details')
   print('5. Quit the program')
-
+  print('\n')
 
 #################################################
 main()

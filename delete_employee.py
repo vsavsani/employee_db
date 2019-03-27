@@ -5,47 +5,36 @@ def delete_employee(file_n, emp_id):
 
 	if (methods.check_for_entry(methods.open_for_read(file_n), emp_id)):
 
-		emp_dict = methods.load_emp_data(methods.open_for_read(file_n), emp_id)
+		emp_dict = methods.load_emp_data(methods.open_for_read(file_n))
 
 		choose_option()
 		choice = int(input('Enter your choice: '))	
 		if choice == 1:
-			print(emp_dict[emp_id]['contacts']['mobile'][0])
 			emp_dict[emp_id]['contacts']['mobile'][0] = '-'
-			print(emp_dict[emp_id]['contacts']['mobile'][0])
-
-			print(emp_dict)
-			
+			print(emp_dict[emp_id])
 			file_h = methods.open_new(file_n)
 			methods.write_emp_data(file_h, emp_dict)
+
 		elif choice == 2:
-			print(emp_dict[emp_id]['contacts']['mobile'][1])
 			emp_dict[emp_id]['contacts']['mobile'][1] = '-'
-			print(emp_dict[emp_id]['contacts']['mobile'][1])
-
-			print(emp_dict)
-
+			print(emp_dict[emp_id])
 			file_h = methods.open_new(file_n)
 			methods.write_emp_data(file_h, emp_dict)
+
 		elif choice == 3:
-			print(emp_dict[emp_id]['contacts']['landline'][0])
 			emp_dict[emp_id]['contacts']['landline'][0] = '-'
-			print(emp_dict[emp_id]['contacts']['landline'][0])
-
-			print(emp_dict)
-
+			print(emp_dict[emp_id])
 			file_h = methods.open_new(file_n)
 			methods.write_emp_data(file_h, emp_dict)
+
 		elif choice == 4:
-			print(emp_dict[emp_id]['contacts']['landline'][1])
 			emp_dict[emp_id]['contacts']['landline'][1] = '-'
-			print(emp_dict[emp_id]['contacts']['landline'][1])
-			print(emp_dict)
+			print(emp_dict[emp_id])
 			file_h = methods.open_new(file_n)
 			methods.write_emp_data(file_h, emp_dict)
+
 		else:
 			print('Invalid Input')
-
 
 	else:		
 
